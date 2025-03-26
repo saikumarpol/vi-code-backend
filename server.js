@@ -7,7 +7,8 @@ const app = express();
 
 // ✅ Apply Middleware in the Correct Order
 app.use(cors({
-    origin: "http://localhost:5173",  // Match your React frontend port
+    origin: "http://localhost:5173", 
+    "https://tech-vicode.netlify.app/"
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
