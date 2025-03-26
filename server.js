@@ -7,12 +7,15 @@ const app = express();
 
 // ✅ Apply Middleware in the Correct Order
 app.use(cors({
-    origin: "http://localhost:5173", 
-    "https://tech-vicode.netlify.app/",
+    origin: [
+        "http://localhost:5173",
+        "https://tech-vicode.netlify.app"   // ✅ No trailing comma
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
 }));
+
 
 // ✅ Make sure to parse JSON requests
 app.use(express.json());
